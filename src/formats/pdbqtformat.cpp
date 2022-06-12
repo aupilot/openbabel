@@ -564,12 +564,12 @@ namespace OpenBabel
       if (free_bonds.count(i))
       {
         ofs << "BRANCH";
-        ofs.width(4);
+        ofs.width(5);
         unsigned int parent_atom=(*tree.find(i)).second.connecting_atom_parent;
         unsigned int child_atom=(*tree.find(i)).second.connecting_atom_branch;
         if (!preserve_original_index) { ofs << (new_order.find(parent_atom))-> second;}
         else {ofs << parent_atom;}
-        ofs.width(4);
+        ofs.width(5);
         if (!preserve_original_index) {ofs << (new_order.find(child_atom))-> second;}
         else {ofs << child_atom;}
         ofs << endl;
@@ -590,12 +590,12 @@ namespace OpenBabel
           if (free_bonds.count(*it))
           {
             ofs << "ENDBRANCH";
-            ofs.width(4);
+            ofs.width(5);
             unsigned int parent_atom=(*tree.find(*it)).second.connecting_atom_parent;
             unsigned int child_atom=(*tree.find(*it)).second.connecting_atom_branch;
             if (!preserve_original_index) { ofs << (new_order.find(parent_atom))-> second;}
                                     else {ofs << parent_atom;}
-            ofs.width(4);
+            ofs.width(5);
             if (!preserve_original_index) {ofs << (new_order.find(child_atom))-> second;}
                                     else {ofs << child_atom;}
             ofs << endl;
